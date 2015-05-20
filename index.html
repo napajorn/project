@@ -10,6 +10,21 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
+    <div ng-controller="MyController">
+      Hello {{greetMe}}!
+    </div>
+    <script src="http://code.angularjs.org/snapshot/angular.js"></script>
+    <script>
+    angular.module('myApp', [])
+      .controller('MyController', ['$scope', function ($scope) {
+        $scope.greetMe = 'World';
+      }]);
+
+    angular.element(document).ready(function() {
+      angular.bootstrap(document, ['myApp']);
+    });
+  </script>
+    
     <section class="page-header">
       <h1 class="project-name">Test Page</h1>
       <h2 class="project-tagline">2015</h2>
