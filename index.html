@@ -100,7 +100,7 @@ svg.append("g")
   .append("line")
     .attr("y1", "100%");
 
-d3.json("readme.json", function(error, root) {
+d3.json("http://bl.ocks.org/mbostock/raw/1283663/04465c4e438badbdf79ae4c6c35b1f4963ccd4c9/readme.json", function(error, root) {
   partition.nodes(root);
   x.domain([0, root.value]).nice();
   down(root, 0);
@@ -271,7 +271,6 @@ function stack(i) {
     return tx;
   };
 }
-
 </script>
     <section class="main-content">
       <h3>
