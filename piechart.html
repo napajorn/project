@@ -53,7 +53,7 @@ rect:hover {  fill:blue; }
 <script>
 function dashboard(id, fData){
     var barColor = 'steelblue';
-    function segColor(c){ return {low:"#807dba", mid:"#e08214",high:"#41ab5d"}[c]; }
+    function segColor(c){ return {min:"#807dba", mean:"#e08214",max:"#41ab5d", sd:"#4169e1"}[c]; }
     
     // compute total for each state.
     fData.forEach(function(d){d.total=d.freq.low+d.freq.mid+d.freq.high;});
