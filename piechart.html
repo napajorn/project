@@ -1,13 +1,3 @@
-NPashaP’s block #96447623ef4d342ee09b May 12, 2014
-DashBoard
-
-Open in a new window.
-A simple example of creating a dashboard. This example was created for the paper Interactive HTML Reporting Using D3 at the MWSUG2014 conference.
-
-Hovering over a bar in histogram will modify the pie chart and legend.
-Hovering over pie slice will update the histogram.
-index.html#
-
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
@@ -56,7 +46,7 @@ function dashboard(id, fData){
     function segColor(c){ return {min:"#807dba", mean:"#e08214",max:"#41ab5d", sd:"#4169e1"}[c]; }
     
     // compute total for each state.
-    fData.forEach(function(d){d.total=d.freq.min+d.freq.mean+d.freq.max+d.freq.sd;});
+    fData.forEach(function(d){d.total=d.freq.min+d.freq.mean+d.freq.max+d.freq.mode+d.freq.sd;});
     
     // function to handle histogram.
     function histoGram(fD){
@@ -279,17 +269,17 @@ var freqData1=[
 ];
 
 var resultSurvey=[
-{State:'1',freq:{min:1,mean:3,max:5,sd:1.40}}
-,{State:'2',freq:{min:5,mean:6,max:10,sd:1.85}}
-,{State:'3',freq:{min:2,mean:3,max:10,sd:1.85}}
-,{State:'4',freq:{min:1,mean:4,max:8,sd:1.10}}
-,{State:'5',freq:{min:2,mean:3,max:6,sd:1.30}}
-,{State:'6',freq:{min:3,mean:5,max:10,sd:1.60}}
-,{State:'7',freq:{min:1,mean:3,max:5,sd:1.00}}
-,{State:'8',freq:{min:2,mean:5,max:10,sd:1.60}}
-,{State:'9',freq:{min:4,mean:6,max:9,sd:2.3}}
+{State:'1',freq:{min:1,mean:3,max:5,mode:5,sd:1.40}}
+,{State:'2',freq:{min:5,mean:6,max:10,mode:5,sd:1.85}}
+,{State:'3',freq:{min:2,mean:3,max:10,mode:5,sd:1.85}}
+,{State:'4',freq:{min:1,mean:4,max:8,mode:5,sd:1.10}}
+,{State:'5',freq:{min:2,mean:3,max:6,mode:5,sd:1.30}}
+,{State:'6',freq:{min:3,mean:5,max:10,mode:5,sd:1.60}}
+,{State:'7',freq:{min:1,mean:3,max:5,mode:5,sd:1.00}}
+,{State:'8',freq:{min:2,mean:5,max:10,mode:5,sd:1.60}}
+,{State:'9',freq:{min:4,mean:6,max:9,mode:5,sd:2.3}}
 ];
 
 dashboard('#dashboard',resultSurvey);
 </script>
-NPashaP’s block #96447623ef4d342ee09b May 12, 2014
+
