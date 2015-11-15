@@ -56,7 +56,7 @@ function dashboard(id, fData){
     function segColor(c){ return {min:"#807dba", mean:"#e08214",max:"#41ab5d", sd:"#4169e1"}[c]; }
     
     // compute total for each state.
-    fData.forEach(function(d){d.total=d.freq.low+d.freq.mid+d.freq.high;});
+    fData.forEach(function(d){d.total=d.freq.min+d.freq.mean+d.freq.max+d.freq.sd;});
     
     // function to handle histogram.
     function histoGram(fD){
