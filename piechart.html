@@ -229,7 +229,7 @@ function dashboard(id, fData){
     //var tF = ['low','mid','high'].map(function(d){ 
     //    return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
     //});    
-    var tF = ['min','mean','max','sd'].map(function(d){ 
+    var tF = ['min','mean','max','mode','sd'].map(function(d){ 
         return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
     });
     // calculate total frequency by state for all segment.
